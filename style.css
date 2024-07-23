@@ -110,8 +110,7 @@ img {
 .video-container {
     position: relative;
     width: 840px;
-    margin: 20px auto;
-    /* Center the video */
+    margin: 20px auto;/* Center the video */
     background: #000;
 }
 
@@ -128,6 +127,7 @@ img {
     display: none;
     padding-right: 30px;
     z-index: 10;
+    font-size: 2rem;
 }
 
 
@@ -293,8 +293,8 @@ img {
     }
     #hamIcon {
         display: block;
-    }
-    /* unhide menu icon */
+    }/* unhide menu icon */
+    
     #player {
         position: absolute;
         width: 100px;
@@ -310,28 +310,40 @@ img {
     #gameArea {
         position: relative;
         width: 90%;
-        height: 800px;
+        height: 400px;
         background-color: aqua;
         border: 15px solid gold;
         margin: 200px auto 20px auto;
+    }
+    .control-buttons {
+        display: grid;
+        grid-template-rows: repeat(3, 30px);
+        grid-template-columns: repeat(3, 30px);
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        margin-top: 10px;
+    }
+    .control-buttons p {
+        font-size: 2.2rem;
     }
 
     /* video */
     .video-container {
         position: relative;
-        width: 360px;
-        margin: 20px auto;
+        width: 300px;
+        margin: 10px auto;
         background: #000;
     }
     
     .video-container iframe {
         width: 100%;
-        height: 200px;
+        height: 170px;
         border: 0;
     }
 
     #page1 h2{
-        margin: 30px 100px;
+        margin: 30px 30px;
     }
 
     /* home */
@@ -342,21 +354,33 @@ img {
 
     /* page1 */
     .shark-species {
-        display: block;
+        display:flow-root;
         align-items: center;
     }
 
     .shark-info{
-        width: 80%;
+        width: 70%;
     }
     .shark-img{
-        width: 80%;
+        width: 70%;
+    }
+
+    .shark-img.left,.shark-info.left {
+        transform: translateX(-0%);
+    }
+
+    .shark-img.right,.shark-info.right {
+        transform: translateX(0%);
     }
 
     /* page 2 */
     #feeding {
         margin: 0 50px;
         font-size: 1.2rem;
+    }
+
+    #page2 h2{
+        margin: 30px 30px;
     }
 
 }

@@ -61,7 +61,7 @@ function removeMenu() {
 }
 
 
-//监听滚动事件
+//scroll
 document.addEventListener('scroll', function() {
 	const species = document.querySelectorAll('.shark-species');
 
@@ -84,15 +84,12 @@ function initGame() {
 	const playerElement = document.getElementById('player');
 	const fishElement = document.getElementById('fish');
 
-
-
-	// 获取实际尺寸
 	const playerWidth = playerElement.clientWidth;
 	const playerHeight = playerElement.clientHeight;
 	const fishWidth = fishElement.clientWidth;
 	const fishHeight = fishElement.clientHeight;
 
-	// 初始化玩家和小鱼
+	// Initialize the player and the fish
 	const player = {
 		x: gameArea.clientWidth / 2 - playerWidth / 2,
 		y: gameArea.clientHeight / 2 - playerHeight / 2,
@@ -100,8 +97,8 @@ function initGame() {
 		height: playerHeight,
 		speed: 5,
 		direction: 'right',
-		dx: 0, // 移动方向的 x 分量
-		dy: 0 // 移动方向的 y 分量
+		dx: 0, 
+		dy: 0 
 	};
 
 	const fish = {
@@ -123,7 +120,6 @@ function initGame() {
 			player.y < fish.y + fish.height &&
 			player.y + player.height > fish.y
 		) {
-			// 重置小鱼位置
 			fish.x = Math.random() * (gameArea.clientWidth - fish.width);
 			fish.y = Math.random() * (gameArea.clientHeight - fish.height);
 			updateElementPosition(fishElement, fish);
@@ -134,11 +130,11 @@ function initGame() {
 		player.x += player.dx;
 		player.y += player.dy;
 
-		// 防止玩家移动出游戏区域
+		// Prevent the player from moving out of the game area
 		player.x = Math.max(0, Math.min(gameArea.clientWidth - player.width, player.x));
 		player.y = Math.max(0, Math.min(gameArea.clientHeight - player.height, player.y));
 
-		// 根据方向翻转玩家图片
+		// Flip the player image based on orientation
 		if (player.dx < 0) {
 			player.direction = 'left';
 		} else if (player.dx > 0) {
@@ -154,10 +150,9 @@ function initGame() {
 		updateElementPosition(playerElement, player);
 		checkCollision();
 
-		requestAnimationFrame(movePlayer); // 循环调用 movePlayer，实现平滑动画
+		requestAnimationFrame(movePlayer);
 	}
 
-	// 监听键盘事件
 	function handleKeyDown(e) {
 		switch (e.key) {
 			case 'a':
@@ -191,11 +186,11 @@ function initGame() {
 	document.addEventListener('keydown', handleKeyDown);
 	document.addEventListener('keyup', handleKeyUp);
 
-	// 初始化玩家和小鱼位置
+	// Initialize the player and fish positions
 	updateElementPosition(playerElement, player);
 	updateElementPosition(fishElement, fish);
 
-	// 开始游戏循环
+	// game loop
 	requestAnimationFrame(movePlayer);
 
 
