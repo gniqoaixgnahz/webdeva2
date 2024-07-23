@@ -319,15 +319,14 @@ img {
     /* video */
     .video-container {
         position: relative;
-        width: 560px;
+        width: 360px;
         margin: 20px auto;
-        /* Center the video */
         background: #000;
     }
     
     .video-container iframe {
         width: 100%;
-        height: 315px;
+        height: 200px;
         border: 0;
     }
 
