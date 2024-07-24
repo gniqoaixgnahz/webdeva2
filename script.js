@@ -95,7 +95,7 @@ function initGame() {
 		y: gameArea.clientHeight / 2 - playerHeight / 2,
 		width: playerWidth,
 		height: playerHeight,
-		speed: 5,
+		speed: 3,
 		direction: 'right',
 		dx: 0, 
 		dy: 0 

@@ -119,6 +119,22 @@ img {
     height: 472.5px;
     border: 0;
 }
+
+p#qrqr{
+    padding: 200px 0 0 0;
+    position: relative;
+    width: 60vw;
+    text-align: center;
+    margin: 1px auto;/* Center the video */
+    font-size: 1.5rem;
+}
+#QR{
+    position: relative;
+    width: 20vw;
+    margin: 10px auto;/* Center the video */
+    background: #000;
+     
+}
 /* page HOME */
 /* page HOME */
 
