@@ -368,6 +368,13 @@ p#qrqr{
         font-size: 1.2rem;
     }
 
+    p#qrqr{
+        display: none;
+    }
+    #QR{
+        display: none;
+    }
+
     /* page1 */
     .shark-species {
         display:flow-root;
